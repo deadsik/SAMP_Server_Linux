@@ -5,7 +5,7 @@ RUN export DEBIAN_FRONTEND=noninteractive
 RUN rm -f /var/lib/apt/lists/lock
 RUN apt-get update -y
 RUN apt-get upgrade -y
-RUN apt-get install screen curl -y
+RUN apt-get install screen curl lib32stdc++6 -y
 RUN curl -o /root/samp037svr_R2-1.tar.gz http://dark-games.org.ua/files/samp/samp037svr_R2-1.tar.gz
 RUN cd /root && tar -xvzf samp037svr_R2-1.tar.gz
 
