@@ -8,21 +8,10 @@ RUN apt-get upgrade -y
 RUN apt-get install screen curl lib32stdc++6 -y
 RUN curl -o /root/samp037svr_R2-1.tar.gz http://dark-games.org.ua/files/samp/samp037svr_R2-1.tar.gz
 RUN cd /root && tar -xvzf samp037svr_R2-1.tar.gz
-
-
-
-
-
-RUN mkdir -p /root/server/
-RUN unzip /root/hlds_6153_linux.zip -d /root/server/
-RUN rm -f /root/hlds_6153_linux.zip
-RUN touch /root/server/cstrike/listip.cfg
-RUN touch /root/server/cstrike/banned.cfg
-RUN echo "cd /root/server/" > /root/server/start.sh
-RUN echo "screen -A -m -d -S cs27015 ./hlds_run -game cstrike +ip 0.0.0.0 -autoupdate -pingboost 2 -port 27015 +maxplayers 32 +map de_dust2" >> /root/server/start.sh
-RUN chmod +x /root/server/start.sh
-RUN chmod +x /root/server/hlds_run
-RUN chmod +x /root/server/hlds_linux
+RUN echo "cd /root/samp03/" >> /root/samp03/start.sh
+RUN echo "/root/samp03/samp03svr" > /root/samp03/start.sh
+RUN chmod +x /root/samp03/start.sh
+RUN chmod +x /root/samp03/samp03svr
 
 COPY start.sh /root/start.sh
 RUN chmod +x /root/start.sh
