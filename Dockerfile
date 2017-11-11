@@ -11,7 +11,9 @@ RUN curl -o /home/server/samp037svr_R2-1.tar.gz http://dark-games.org.ua/files/s
 RUN cd /home/server && tar -xvzf samp037svr_R2-1.tar.gz && rm -f /home/server/samp037svr_R2-1.tar.gz
 RUN chmod +x /home/server/samp03/samp03svr
 COPY start.sh /root/start.sh
+RUN chmod +x /root/update.sh
 RUN chmod +x /root/start.sh
+RUN chmod +x /root/update.sh
 
 EXPOSE 22 7777
 ENTRYPOINT /root/start.sh
